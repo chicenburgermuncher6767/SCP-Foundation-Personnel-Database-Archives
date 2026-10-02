@@ -8,7 +8,7 @@ Only edit the CONFIG section.
 const CONFIG = {
 
   /* Fictional website clearance code. This is NOT real security. */
-  clearanceCode: "JUPITER",
+  clearanceCode: "SITE45",
 
   /*
   OFFICIAL SCP DIRECTORY LINKS
