@@ -146,9 +146,9 @@ const CONFIG = {
   myOCs: {
     mtf: [
       {
-        Name: "Titan",
-        Occupation: "Combat Medic",
-        Description: "Autonomous Combat Medical VIP unit.",
+        name: "Titan",
+        occupation: "Combat Medic",
+        description: "Autonomous Combat Medical VIP unit.",
         url: "https://docs.google.com/document/d/1UOaXTSoxO8ZGaQaelRBuRlye5PnQfcDVVVFKh3Lal2s/edit?usp=sharing"
       }
     ],
