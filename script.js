@@ -149,11 +149,25 @@ const CONFIG = {
         name: "Titan",
         occupation: "Combat Medic",
         description: "Autonomous Combat Medical VIP unit.",
-        url: "https://docs.google.com/document/d/1UOaXTSoxO8ZGaQaelRBuRlye5PnQfcDVVVFKh3Lal2s/edit?usp=sharing"
+        url: "https://docs.google.com/document/d/1DyKbAO_3Mk9QdBUcOE7wi_Xd7Hx9z9nofWttqpJpCHA/edit?usp=sharing"
       }
     ],
-    department: [],
-    friendly: [],
+    department: [
+      {
+        name: "Jason Savage",
+        occupation: "Internal Security Department",
+        description: "Internal Security Operations Officer",
+        url: "https://docs.google.com/document/d/1DlqFtQ16j3TIRekHqjdQfmaa4XVpbHHaP2gA1VRvNQU/edit?usp=sharing"
+      }
+    ],
+    friendly: [
+      {
+        name: "Henry Monarch",
+        occupation: "Private foundation contractor",
+        description: "Does things as an allied administrative-owned contractor",
+        url: "https://docs.google.com/document/d/1W1sfzIUyUj_GUXI7ll6uQANfVqQZvKaBnTRqx4e2Mto/edit?usp=sharing"
+      }
+    ],
     neutral: [],
     hostile: []
   }
