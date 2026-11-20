@@ -159,6 +159,12 @@ const CONFIG = {
         description: "Internal Security Operations Officer",
         url: "https://docs.google.com/document/d/1DlqFtQ16j3TIRekHqjdQfmaa4XVpbHHaP2gA1VRvNQU/edit?usp=sharing"
       }
+      {
+        name: "Ben Tori" 14,
+        occupation: "Security Department",
+        Description: "Security Marksman",
+        url: "https://docs.google.com/document/d/1VriO9MB2Om0k-mEOp1Tcd9pcHx2aqbsGAyEgGItlWbw/edit?usp=sharing"
+      }
     ],
     friendly: [
       {
