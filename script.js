@@ -183,8 +183,8 @@ myOCs: {
 
     neutral: [],
     hostile: []
-}
-
+  }
+};
 
 /* PAGE LOGIC */
 let audioContext=null,audioUnlocked=false,warningAudioPending=false,warningComplete=false;
