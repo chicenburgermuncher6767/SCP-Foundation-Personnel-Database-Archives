@@ -143,41 +143,47 @@ const CONFIG = {
   These appear BELOW the official directory records.
   */
 
-  myOCs: {
+myOCs: {
     mtf: [
-      {
-        name: "Titan" 45,
-        occupation: "Combat Medic",
-        description: "Autonomous Combat Medical VIP unit.",
-        url: "https://docs.google.com/document/d/1DyKbAO_3Mk9QdBUcOE7wi_Xd7Hx9z9nofWttqpJpCHA/edit?usp=sharing"
-      }
+        {
+            name: "Titan",
+            site: "45",
+            type: "Combat Medic",
+            description: "Autonomous Combat Medical VIP unit.",
+            url: "https://docs.google.com/document/d/1DyKbAO_3Mk9QdBUcOE7wi_Xd7Hx9z9nofWttqpJpCHA/edit?usp=sharing"
+        }
     ],
+
     department: [
-      {
-        name: "Jason Savage" 45,
-        occupation: "Internal Security Department",
-        description: "Internal Security Operations Officer",
-        url: "https://docs.google.com/document/d/1DlqFtQ16j3TIRekHqjdQfmaa4XVpbHHaP2gA1VRvNQU/edit?usp=sharing"
-      }
-      {
-        name: "Ben Tori" 14,
-        occupation: "Security Department",
-        Description: "Security Marksman",
-        url: "https://docs.google.com/document/d/1VriO9MB2Om0k-mEOp1Tcd9pcHx2aqbsGAyEgGItlWbw/edit?usp=sharing"
-      }
+        {
+            name: "Jason Savage",
+            site: "45",
+            type: "Internal Security Department",
+            description: "Internal Security Operations Officer",
+            url: "https://docs.google.com/document/d/1DlqFtQ16j3TIRekHqjdQfmaa4XVpbHHaP2gA1VRvNQU/edit?usp=sharing"
+        },
+        {
+            name: "Ben Tori",
+            site: "14",
+            type: "Security Department",
+            description: "Security Marksman",
+            url: "https://docs.google.com/document/d/1VriO9MB2Om0k-mEOp1Tcd9pcHx2aqbsGAyEgGItlWbw/edit?usp=sharing"
+        }
     ],
+
     friendly: [
-      {
-        name: "Henry Monarch" 45,
-        occupation: "Private foundation contractor",
-        description: "Does things as an allied administrative-owned contractor",
-        url: "https://docs.google.com/document/d/1W1sfzIUyUj_GUXI7ll6uQANfVqQZvKaBnTRqx4e2Mto/edit?usp=sharing"
-      }
+        {
+            name: "Henry Monarch",
+            site: "45",
+            type: "Private Foundation Contractor",
+            description: "Does things as an allied administrative-owned contractor.",
+            url: "https://docs.google.com/document/d/1W1sfzIUyUj_GUXI7ll6uQANfVqQZvKaBnTRqx4e2Mto/edit?usp=sharing"
+        }
     ],
+
     neutral: [],
     hostile: []
-  }
-};
+}
 
 
 /* PAGE LOGIC */
@@ -208,7 +214,7 @@ if(page==='database.html'){
  if(sessionStorage.getItem('archiveAccess')!=='1')location.href='index.html';
  const key=new URLSearchParams(location.search).get('category')||'mtf',c=CONFIG.categories[key]||CONFIG.categories.mtf;document.getElementById('category-title').textContent=c.name;document.getElementById('category-code').textContent='CATEGORY '+c.number+' // '+c.shortName;document.getElementById('category-description').textContent=c.description;document.getElementById('breadcrumb-category').textContent=c.shortName;document.getElementById('official-directory').href=c.official;document.getElementById('official-note-text').textContent=c.officialText;document.getElementById('session-id').textContent=sessionID();
  function render(records){const side=document.getElementById('sidebar-list'),cards=document.getElementById('group-cards');side.innerHTML='';cards.innerHTML='';document.getElementById('result-count').textContent=String(records.length).padStart(2,'0')+' RESULTS';records.forEach(r=>{const s=document.createElement('a');s.className='sidebar-link';s.href=r.url;s.target='_blank';s.rel='noopener';s.textContent=r.name;s.onmouseenter=hoverSound;side.appendChild(s);const card=document.createElement('a');card.className='group-card';card.href=r.url;card.target='_blank';card.rel='noopener';card.innerHTML='<div class="group-type">'+safe(r.type||'RECORD')+'</div><div class="group-name">'+safe(r.name)+'</div><div class="group-description">'+safe(r.description||'Official SCP Wiki directory record.')+'</div><div class="open-mark">OPEN ↗</div>';card.onmouseenter=hoverSound;cards.appendChild(card)})}
- function renderOCs(records){const box=document.getElementById('oc-cards');box.innerHTML='';if(!records.length){box.innerHTML='<div class="oc-intro">NO LOCAL RECORDS ASSIGNED TO THIS CATEGORY. Add your own OC entries to <b>CONFIG.myOCs</b> in script.js.</div>';return}records.forEach(r=>{const card=document.createElement('a');card.className='group-card';card.href=r.url;card.target='_blank';card.rel='noopener';card.innerHTML='<div class="group-type">'+safe(r.type||'PERSONNEL')+'</div><div class="group-name">'+safe(r.name)+'</div><div class="group-description">'+safe(r.description||'Local Foundation archive record.')+'</div><div class="open-mark">OPEN ↗</div>';box.appendChild(card)})}
+ function renderOCs(records){const box=document.getElementById('oc-cards');box.innerHTML='';if(!records.length){box.innerHTML='<div class="oc-intro">NO LOCAL RECORDS ASSIGNED TO THIS CATEGORY. Add your own OC entries to <b>CONFIG.myOCs</b> in script.js.</div>';return}records.forEach(r=>{const card=document.createElement('a');card.className='group-card';card.href=r.url;card.target='_blank';card.rel='noopener';card.innerHTML='<div class="group-type">SITE '+safe(r.site||'UNASSIGNED')+' // '+safe(r.type||'PERSONNEL')+'</div><div class="group-name">'+safe(r.name)+'</div><div class="group-description">'+safe(r.description||'Local Foundation archive record.')+'</div><div class="open-mark">OPEN ↗</div>';box.appendChild(card)})}
  const all=c.records||[];document.getElementById('group-count').textContent=String(all.length).padStart(2,'0');render(all);renderOCs(CONFIG.myOCs[key]||[]);document.getElementById('search').oninput=e=>{const q=e.target.value.toLowerCase().trim();render(all.filter(r=>(r.name+' '+(r.type||'')+' '+(r.description||'')).toLowerCase().includes(q)))};
  const now=()=>document.getElementById('clock').textContent=new Date().toLocaleString('en-AU',{hour12:false,dateStyle:'short',timeStyle:'medium'});now();setInterval(now,1000)
 }
