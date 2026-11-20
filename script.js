@@ -146,7 +146,7 @@ const CONFIG = {
   myOCs: {
     mtf: [
       {
-        name: "Titan",
+        name: "Titan" 45,
         occupation: "Combat Medic",
         description: "Autonomous Combat Medical VIP unit.",
         url: "https://docs.google.com/document/d/1DyKbAO_3Mk9QdBUcOE7wi_Xd7Hx9z9nofWttqpJpCHA/edit?usp=sharing"
@@ -154,7 +154,7 @@ const CONFIG = {
     ],
     department: [
       {
-        name: "Jason Savage",
+        name: "Jason Savage" 45,
         occupation: "Internal Security Department",
         description: "Internal Security Operations Officer",
         url: "https://docs.google.com/document/d/1DlqFtQ16j3TIRekHqjdQfmaa4XVpbHHaP2gA1VRvNQU/edit?usp=sharing"
@@ -162,7 +162,7 @@ const CONFIG = {
     ],
     friendly: [
       {
-        name: "Henry Monarch",
+        name: "Henry Monarch" 45,
         occupation: "Private foundation contractor",
         description: "Does things as an allied administrative-owned contractor",
         url: "https://docs.google.com/document/d/1W1sfzIUyUj_GUXI7ll6uQANfVqQZvKaBnTRqx4e2Mto/edit?usp=sharing"
